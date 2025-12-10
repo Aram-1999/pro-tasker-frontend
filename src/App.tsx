@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-    <div className='p-5 bg-zinc-800 h-screen'>
+    <div className='p-5 bg-zinc-800 min-h-screen'>
       <Navbar />
       <Routes>
         <Route path='/' element={<HomePage />} />

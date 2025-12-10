@@ -24,7 +24,7 @@ function IsAutherizedProvider({ children }: PropsType) {
       localStorage.setItem('pro-tasker-isAuthorized', "false");
       setIsAuthorized(false)
       navigate('/')
-     }, 120 *1000);
+     }, 1200 *1000);
      setTimeoutId(toId);
 
   };

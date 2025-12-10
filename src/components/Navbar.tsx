@@ -20,19 +20,19 @@ function Navbar() {
   };
 
   return (
-    <nav className="text-white flex justify-between items-center w-full h-10">
+    <nav className="text-white flex justify-between items-center w-full h-10 bg-zinc-600 px-3">
       {isAuthorized ? (
         <>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/projects">Projects</NavLink>
-          <button onClick={handleSignout}>Logout</button>
+          <NavLink className="bg-green-900 p-1 px-3 rounded-xl" to="/">Home</NavLink>
+          <NavLink className="bg-green-900 p-1 px-3 rounded-xl" to="/projects">Projects</NavLink>
+          <button className="bg-orange-800 p-1 px-3 rounded-xl" onClick={handleSignout}>Logout</button>
         </>
       ) : (
         <>
-          <NavLink to="/">Home</NavLink>
+          <NavLink className="bg-green-900 p-1 px-3 rounded-xl" to="/">Home</NavLink>
           <div>
-            <NavLink to="/login">Sign in</NavLink>
-            <NavLink className="mx-2" to="/register">
+            <NavLink className="bg-green-900 p-1 px-3 rounded-xl mx-3" to="/login">Sign in</NavLink>
+            <NavLink className="bg-green-900 p-1 px-3 rounded-xl" to="/register">
               Register
             </NavLink>
           </div>

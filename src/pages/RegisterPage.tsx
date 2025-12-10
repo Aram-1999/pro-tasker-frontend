@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const baseURL = "http://localhost:4000";
 
 function RegisterPage() {
@@ -8,6 +8,7 @@ function RegisterPage() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate()
 
   const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.currentTarget.value);
@@ -30,7 +31,9 @@ function RegisterPage() {
         password,
       });
       localStorage.setItem("pro-tasker-token", response.data.token);
+      navigate('/')
       setError("");
+
     } catch (error) {
       if (error instanceof AxiosError) {
         setError(error?.response?.data?.message);
