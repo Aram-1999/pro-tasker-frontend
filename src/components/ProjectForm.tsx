@@ -32,7 +32,7 @@ const ProjectForm = React.memo(function ProjectForm({
           type="text"
           name="project-name"
           id="project-name"
-          className="border px-2"
+          className="border px-2 py-1 hover:bg-zinc-700"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
@@ -43,9 +43,9 @@ const ProjectForm = React.memo(function ProjectForm({
           type="text"
           name="project-description"
           id="project-description"
-          className="border px-2"
+          className="border px-2 py-1 hover:bg-zinc-700"
         />
-        <button type="submit" className="mt-5 mb-2 bg-sky-500 rounded">
+        <button type="submit" className="mt-5 mb-2 bg-sky-500 rounded py-1 hover:bg-sky-600">
           {button}
         </button>
         {error && <div className='text-sm text-red-500'>{error}</div>}

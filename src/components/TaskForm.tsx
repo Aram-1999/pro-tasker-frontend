@@ -21,7 +21,7 @@ function TaskForm({
   status,
   setStatus,
   isEditing,
-  error
+  error,
 }: TaskFormProps) {
   const button = isEditing ? "Update Task" : "Create Task";
 
@@ -37,7 +37,7 @@ function TaskForm({
           type="text"
           name="task-name"
           id="task-name"
-          className="border px-2"
+          className="border px-2 py-1 hover:bg-zinc-700"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -48,17 +48,17 @@ function TaskForm({
           type="text"
           name="task-description"
           id="task-description"
-          className="border px-2"
+          className="border px-2 py-1 hover:bg-zinc-700"
         />
         <div className="flex gap-5">
-          <label htmlFor="status">Status</label>
+          <label htmlFor="status">Status:</label>
           <select
-            className="bg-zinc-800 w-fit pr-2"
+            className="bg-zinc-800 w-fit pr-2 hover:cursor-pointer hover:bg-zinc-700"
             name="status"
             id="status"
             value={status}
             onChange={(e) => {
-                setStatus(e.target.value as Status)
+              setStatus(e.target.value as Status);
             }}
           >
             <option value="To Do">To Do</option>
@@ -67,7 +67,10 @@ function TaskForm({
           </select>
         </div>
 
-        <button type="submit" className="mt-auto bg-sky-500 rounded">
+        <button
+          type="submit"
+          className="mt-auto bg-sky-500 hover:bg-sky-600 py-1 rounded"
+        >
           {button}
         </button>
         {error && <div className="text-sm text-red-500">{error}</div>}

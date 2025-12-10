@@ -165,6 +165,7 @@ function ProjectDetailsPage() {
                 setTitle={setTitle}
                 task={task}
                 handleDelete={handleDelete}
+                setTasks={setTasks}
               />
             ))}
           </div>
