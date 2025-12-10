@@ -1,8 +1,8 @@
-import axios, { AxiosError } from "axios";
+import { AxiosError } from "axios";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import IsAuthorized from "../context/IsAuthorized";
-const baseURL = "http://localhost:4000";
+import { apiClient } from "../clients/api";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -23,7 +23,7 @@ function LoginPage() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     try {
       event.preventDefault();
-      const response = await axios.post(`${baseURL}/api/users/login`, {
+      const response = await apiClient.post(`/api/users/login`, {
         email,
         password,
       });
